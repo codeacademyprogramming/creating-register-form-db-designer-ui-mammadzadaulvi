@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validateForm(){
+            let name =document.form1.name.value;
+            let uname = document.form1.uname.value;
+
+            if(name == null || name == ""){
+                alert("Name hissesini doldur")
+                return false;
+            }
+            else if(name.length < 2){
+                alert("Name 2 den kicik ola bilmez");
+                return false;
+            } 
+            else if(name.length > 50){
+                alert("Name 50 den boyuk ola bilmez");
+                return false;
+            } 
+            
+
+
+            if(uname == null || uname == ""){
+                alert("Username hissesini doldur")
+                return false;
+            }
+            else if(uname.length < 2){
+                alert("Username 2 den kicik ola bilmez");
+                return false;
+            } 
+            else if(uname.length > 50){
+                alert("Username 50 den boyuk ola bilmez");
+                return false;
+            }
+
+
+
+            
+            
+        }
+
+
+    
+
+
+    function check() {
+    if(document.getElementById('password').value ===
+            document.getElementById('confirm_password').value) {
+        document.getElementById('message').innerHTML = "";
+    } else {
+        document.getElementById('message').innerHTML = "These passwords do not match";
+    }
+    }
+
+
+
+    function ValidateEmail(inputText)
+    {var mailformat=/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f]    )*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|    [a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;if(inputText.value.match(mailformat))
+    {document.form1.text1.focus();
+        return true;}
+    else{
+        alert("Email adresini dogru yazin");
+        document.form1.text1.focus();
+        return false;}
+    }
+
+
+
+
+    </script>
+</head>
+<body>
+    <form name ="form1" method="POST" action="text.html" onsubmit="return validateForm()">
+    Name: <input type="text" name="name"><br>
+    Username: <input type="text" name="uname"><br>
+    Email: <input type="text" name="text1"><br>
+    Password: <input name="password" id="password" type="password" /><br>
+    Repeat Password: <input type="password" name="confirm_password" id="confirm_password" onchange="check()"/><br> 
+    <span id='message'></span><br>
+    Işarələ bunu: <input type="checkbox" id="box" name="test" required>
+    <input type="submit" id="submit" value="register" onClick="ValidateEmail(document.form1.text1), check(), validateForm()">
+    </form>
+
+<!-- 
+        <label>password :
+        <input name="password" id="password" type="password" />
+        </label><br>
+        <label>confirm password:<br>
+        <input type="password" name="confirm_password" id="confirm_password" /><br> 
+        <span id='message'></span> -->
+
+
+
+        <!-- <h2>Input an email & Submit (RFC 2822) </h2>
+<form name="form1" action="#">
+<ul>
+<li><input type='text' name='text1' /></li>
+<li>&nbsp;</li>
+<li class="submit"><input type="submit" name="submit" value="Submit" onClick="ValidateEmail(document.form1.text1)" /></li>
+<li>&nbsp;</li>
+</ul>
+</form> -->
+
+
+
+
+
+
+
+
+
+</body>
+</html>
